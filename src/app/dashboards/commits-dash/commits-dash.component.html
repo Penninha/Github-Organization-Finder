@@ -1,2 +1,11 @@
-<app-branch-selector [branches]="branchesData"></app-branch-selector>
-<app-commits-table [commitsData]="commitData"></app-commits-table>
+<app-branch-selector
+  [branches]="branchesData"
+  [repoName]="repoName"
+  (branchSelected)="fetchNewCommitsFromOtherBranch($event)"
+></app-branch-selector>
+<app-commits-table
+  *ngIf="newFetch == true"
+  [commitsData]="localCommitData"
+></app-commits-table>
+
+<mat-spinner class="spinner" *ngIf="newFetch == false"></mat-spinner>

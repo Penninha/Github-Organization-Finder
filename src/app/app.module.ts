@@ -16,12 +16,13 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatButtonModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 import { PrincipalComponent } from "./dashboards/principal/principal.component";
-import { CommitsTableComponent } from './components/commits-table/commits-table.component';
-import { BranchSelectorComponent } from './components/branch-selector/branch-selector.component';
-import { CommitsDashComponent } from './dashboards/commits-dash/commits-dash.component';
+import { CommitsTableComponent } from "./components/commits-table/commits-table.component";
+import { BranchSelectorComponent } from "./components/branch-selector/branch-selector.component";
+import { CommitsDashComponent } from "./dashboards/commits-dash/commits-dash.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CommitsDashComponent } from './dashboards/commits-dash/commits-dash.com
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

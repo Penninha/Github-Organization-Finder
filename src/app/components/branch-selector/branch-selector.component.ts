@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
   selector: "app-branch-selector",
@@ -7,12 +7,15 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class BranchSelectorComponent implements OnInit {
   @Input() branches: any[] = [];
+  @Input() repoName: string;
+
+  @Output() branchSelected = new EventEmitter<string>();
 
   constructor() {}
 
   ngOnInit() {}
 
-  debugSelection(event) {
-    console.log(event);
+  sendBranch(branch: string) {
+    this.branchSelected.emit(branch);
   }
 }

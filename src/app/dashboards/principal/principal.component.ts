@@ -64,7 +64,10 @@ export class PrincipalComponent implements OnInit {
               let realTitle = element.commit.message.split("\n", 1);
 
               this.commits_data.push({
-                author: element.author.login,
+                author:
+                  element.author == null
+                    ? element.committer.login
+                    : element.author.login,
                 title: realTitle[0],
                 date: element.commit.author.date,
                 hash: element.sha

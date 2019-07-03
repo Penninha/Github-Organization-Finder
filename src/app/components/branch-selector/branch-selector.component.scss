@@ -3,6 +3,10 @@ $bgColor: rgba(255, 255, 255, 0);
 .header {
   background-color: $bgColor;
 
+  .header-name {
+    margin: 0 15px;
+  }
+
   .spacer {
     flex: 1 1 auto;
   }

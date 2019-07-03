@@ -1,7 +1,8 @@
 <mat-toolbar class="header">
+  <span class="header-name">{{ repoName }}</span>
   <span class="spacer"></span>
   <mat-select
-    (valueChange)="debugSelection($event)"
+    (valueChange)="sendBranch($event)"
     class="selector"
     value="master"
   >
