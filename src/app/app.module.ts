@@ -17,12 +17,14 @@ import {
   MatInputModule,
   MatButtonModule,
   MatSelectModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatIconModule
 } from "@angular/material";
 import { PrincipalComponent } from "./dashboards/principal/principal.component";
 import { CommitsTableComponent } from "./components/commits-table/commits-table.component";
 import { BranchSelectorComponent } from "./components/branch-selector/branch-selector.component";
 import { CommitsDashComponent } from "./dashboards/commits-dash/commits-dash.component";
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { CommitsDashComponent } from "./dashboards/commits-dash/commits-dash.com
     PrincipalComponent,
     CommitsTableComponent,
     BranchSelectorComponent,
-    CommitsDashComponent
+    CommitsDashComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { CommitsDashComponent } from "./dashboards/commits-dash/commits-dash.com
     MatButtonModule,
     HttpClientModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

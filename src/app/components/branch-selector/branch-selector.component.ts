@@ -8,8 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 export class BranchSelectorComponent implements OnInit {
   @Input() branches: any[] = [];
   @Input() repoName: string;
+  @Input() incomingBranch: string;
 
   @Output() branchSelected = new EventEmitter<string>();
+  @Output() backButtonPressed = new EventEmitter();
 
   constructor() {}
 
@@ -17,5 +19,9 @@ export class BranchSelectorComponent implements OnInit {
 
   sendBranch(branch: string) {
     this.branchSelected.emit(branch);
+  }
+
+  onBackButtonPressed() {
+    this.backButtonPressed.emit();
   }
 }

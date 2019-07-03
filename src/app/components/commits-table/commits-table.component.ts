@@ -22,33 +22,7 @@ export class CommitsTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatTable, { static: false }) table: MatTable<CommitsTableItem>;
   dataSource: CommitsTableDataSource;
 
-  @Input("commitsData") data: CommitsTableItem[] = [
-    {
-      author: "Fulano",
-      title: "Commit inicial",
-      date: new Date(),
-      hash: "abc"
-    },
-    {
-      author: "Deutrano",
-      title: "Commit inicial",
-      date: new Date(),
-      hash: "cde"
-    },
-    {
-      author: "Ciclano",
-      title: "Commit inicial",
-      date: new Date(),
-      hash: "fgh"
-    },
-    {
-      author: "Fernando",
-      title: "Commit inicial",
-      date: new Date(),
-      hash: "ijk"
-    },
-    { author: "Zazcar", title: "Commit inicial", date: new Date(), hash: "kli" }
-  ];
+  @Input("commitsData") data: CommitsTableItem[] = [];
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ["title", "author", "date", "hash"];

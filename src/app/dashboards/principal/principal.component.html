@@ -1,8 +1,15 @@
 <app-header></app-header>
 
 <app-organization-search
-  (organization)="debugEmitter($event)"
+  (organization)="getRepos($event)"
 ></app-organization-search>
+
+<mat-spinner *ngIf="isReposLoading == true" class="spinner"></mat-spinner>
+
+<app-not-found
+  [errorNumber]="errorHandling"
+  *ngIf="errorHandling != null"
+></app-not-found>
 
 <app-content-table
   *ngIf="btnClicked == true"
@@ -16,4 +23,6 @@
   [branchesData]="branches_data"
   [orgName]="orgName"
   [repoName]="repoName"
+  [incomingBranch]="incomingBranch"
+  (backButtonPressed)="returnTables()"
 ></app-commits-dash>

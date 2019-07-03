@@ -2,3 +2,14 @@
   width: 75%;
   margin: 10px auto;
 }
+
+.spinner {
+  display: block;
+  margin: 15px auto;
+}
+
+.spinner::ng-deep {
+  circle {
+    stroke: #636363;
+  }
+}
