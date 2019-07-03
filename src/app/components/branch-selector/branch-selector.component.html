@@ -1,0 +1,12 @@
+<mat-toolbar class="header">
+  <span class="spacer"></span>
+  <mat-select
+    (valueChange)="debugSelection($event)"
+    class="selector"
+    value="master"
+  >
+    <mat-option *ngFor="let branch of branches" [value]="branch.value">
+      {{ branch.name }}
+    </mat-option>
+  </mat-select>
+</mat-toolbar>

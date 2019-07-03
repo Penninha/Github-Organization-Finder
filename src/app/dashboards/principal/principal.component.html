@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<app-organization-search
+  (organization)="debugEmitter($event)"
+></app-organization-search>
+
+<app-content-table
+  *ngIf="btnClicked == true"
+  [dataTable]="example_data"
+  (projectClick)="getProjectName($event)"
+></app-content-table>
+
+<app-commits-dash
+  *ngIf="repoName != null"
+  [commitData]="commits_data"
+  [branchesData]="branches_data"
+></app-commits-dash>

@@ -1,0 +1,17 @@
+$bgColor: #636363;
+$fontColor: #fefefe;
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  background-color: $bgColor;
+  .title {
+    color: $fontColor;
+    font-weight: 500;
+    .subtitle {
+      font-weight: 300;
+    }
+  }
+}
