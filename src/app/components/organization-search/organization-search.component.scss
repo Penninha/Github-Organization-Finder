@@ -1,15 +1,19 @@
+$bgColor: rgba(0, 0, 0, 0);
+
 .finder-form {
-  min-width: 200px;
-  max-width: 500px;
-  width: 100%;
-  margin: 20px auto;
-  padding: 0 20px;
+  height: 110px;
+  background-color: $bgColor;
+  margin-bottom: -25px;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
 
   .full-width {
-    width: 75%;
+    width: 325px;
   }
 
   .send-button {
-    margin: 0 20px;
+    margin-left: 15px;
   }
 }

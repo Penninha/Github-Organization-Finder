@@ -1,5 +1,10 @@
 <mat-toolbar class="header">
-  <button mat-button class="back-button" (click)="onBackButtonPressed()">
+  <button
+    mat-button
+    class="back-button"
+    (click)="onBackButtonPressed()"
+    [ngStyle]="backButtonStyle"
+  >
     <mat-icon>arrow_upward</mat-icon>
   </button>
   <span class="header-name">{{ repoName }}</span>
@@ -8,6 +13,7 @@
     (valueChange)="sendBranch($event)"
     class="selector"
     [value]="incomingBranch"
+    [ngStyle]="branchSelectorStyle"
   >
     <mat-option *ngFor="let branch of branches" [value]="branch.value">
       {{ branch.name }}

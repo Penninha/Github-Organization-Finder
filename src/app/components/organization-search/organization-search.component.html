@@ -1,4 +1,4 @@
-<div class="finder-form">
+<mat-toolbar class="finder-form">
   <span class="spacer"></span>
 
   <mat-form-field class="full-width">
@@ -6,10 +6,13 @@
   </mat-form-field>
 
   <button
+    type="button"
     mat-raised-button
     class="send-button"
     (click)="sendButton(organizationInput)"
   >
     Send
   </button>
-</div>
+
+  <span class="spacer"></span>
+</mat-toolbar>
