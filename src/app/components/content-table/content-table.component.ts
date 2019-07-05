@@ -47,4 +47,8 @@ export class ContentTableComponent
     //Add 'implements AfterViewChecked' to the class.
     this.table.dataSource = this.dataSource;
   }
+
+  emitName(name: string) {
+    this.click.emit(name);
+  }
 }

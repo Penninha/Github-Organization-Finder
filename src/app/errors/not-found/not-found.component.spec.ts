@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NotFoundComponent } from './not-found.component';
+import { NotFoundComponent } from "./not-found.component";
+import { MatIconModule } from "@angular/material";
 
-describe('NotFoundComponent', () => {
+describe("NotFoundComponent", () => {
   let component: NotFoundComponent;
   let fixture: ComponentFixture<NotFoundComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotFoundComponent ]
-    })
-    .compileComponents();
+      declarations: [NotFoundComponent],
+      imports: [MatIconModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,18 @@ describe('NotFoundComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should display the right error number", () => {
+    let error = 404;
+    component.errorNumber = error;
+    fixture.detectChanges();
+
+    let htmlElement = fixture.nativeElement;
+    let insideText = htmlElement.querySelector("p.error-title").innerText;
+
+    expect(insideText).toContain(error);
   });
 });
